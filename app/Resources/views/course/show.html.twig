@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Course</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ course.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ course.title }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td><img src="{{ asset('/uploads/images/' ~ course.brochure) }}" ></td>
+            </tr>
+            <tr>
+                <th>Simpledescription</th>
+                <td>{{ course.simpleDescription }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ course.description }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ course.price }}</td>
+            </tr>
+            <tr>
+                <th>Learningobjectives</th>
+                <td>{{ course.learningObjectives }}</td>
+            </tr>
+            <tr>
+                <th>Businessskills</th>
+                <td>{{ course.businessSkills }}</td>
+            </tr>
+            <tr>
+                <th>Program</th>
+                <td>{{ course.program }}</td>
+            </tr>
+            <tr>
+                <th>Concernedpublic</th>
+                <td>{{ course.concernedPublic }}</td>
+            </tr>
+            <tr>
+                <th>Prerequisites</th>
+                <td>{{ course.prerequisites }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ course.duration }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if course.date %}{{ course.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ course.code }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('course_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('course_edit', { 'id': course.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

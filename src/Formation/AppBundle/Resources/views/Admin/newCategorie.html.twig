@@ -1,0 +1,53 @@
+{% extends "FormationAppBundle::adminLayout.html.twig" %}
+
+
+{% block content1 %}
+
+    <div class="widget box">
+        <div class="widget-header">
+            <h4><i class="icon-reorder"></i> Ajouter un domaine de formation </h4>
+            <div class="toolbar no-padding">
+                <div class="btn-group">
+                    <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget-content">
+
+
+                {{ form_start(form, {'attr': {'class': 'form-horizontal row-border'}}) }}
+
+
+
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Domaine: </label>
+                    <div class="col-md-10">
+                        {{ form_widget(form.name,{'attr': {'class': 'form-control'}} ,{'attr': {'name': 'regular'}}) }}
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Télécharger photo</label>
+                    <div class="col-md-10">
+                        {{ form_widget(form.image) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <button type="submit" class="btn btn-primary">Confirmer</button>
+                    </div>
+                </div>
+
+
+            {{ form_end(form) }}
+
+        </div>
+
+
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,157 @@
+{% extends "FormationAppBundle::adminLayout.html.twig" %}
+
+
+{% block content1 %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4><i ></i> Ajout d'une nouvelle formation</h4>
+                </div>
+                {{ form_start(form, {'attr': {'class': 'form-horizontal row-border'}}) }}
+                <div class="widget-content">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Titre:</label>
+                        <div class="col-md-10">
+
+                            {{ form_widget(form.title, {'attr': {'class': 'form-control'}} ,{'attr': {'name': 'regular'}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Simple description:</label>
+                        <div class="col-md-10">
+                             {{ form_widget(form.simpleDescription, {'attr': {'class': 'form-control'}} ,{'attr': {'name': 'regular'}}) }}
+                        </div>
+                    </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Description:</label>
+                                <div class="col-md-10">
+                                    {{ form_widget(form.description , {'attr': {'class': 'form-control wysiwyg'}} ,{'attr': {'name': 'wysiwyg'}}) }}
+                                </div>
+                            </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Prix:</label>
+                        <div class="col-md-10 input-width-large">
+
+                            {{ form_widget(form.price, {'attr': {'class': 'form-control'}} ,{'attr': {'name': 'spinner-overflow'}}, {'attr': {'id': 'spinner-overflow' }}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Forfait repas:</label>
+                        <div class="col-md-10 input-width-large">
+
+                            {{ form_widget(form.repa, {'attr': {'class': 'form-control'}} ,{'attr': {'name': 'spinner-overflow'}}, {'attr': {'id': 'spinner-overflow' }}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Forfait Intra:</label>
+                        <div class="col-md-10 input-width-large">
+
+                            {{ form_widget(form.forfaitIntra, {'attr': {'class': 'form-control'}} ,{'attr': {'name': 'spinner-overflow'}}, {'attr': {'id': 'spinner-overflow' }}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">OBJECTIFS PÉDAGOGIQUES:</label>
+                        <div class="col-md-10">
+                            {{ form_widget(form.learningObjectives, {'attr': {'class': 'form-control wysiwyg'}} ,{'attr': {'name': 'wysiwyg'}}, {'attr': {'rows': '5' }}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">COMPÉTENCES MÉTIER:</label>
+                        <div class="col-md-10">
+                            {{ form_widget(form.businessSkills, {'attr': {'class': 'form-control wysiwyg'}} ,{'attr': {'name': 'wysiwyg'}}, {'attr': {'rows': '5' }}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">PROGRAMME:</label>
+                        <div class="col-md-10">
+                            {{ form_widget(form.program, {'attr': {'class': 'form-control wysiwyg'}} ,{'attr': {'name': 'wysiwyg'}}, {'attr': {'rows': '5' }}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">PUBLIC CONCERNÉ: </label>
+                        <div class="col-md-10">
+                            {{ form_widget(form.concernedPublic, {'attr': {'class': 'form-control wysiwyg'}} ,{'attr': {'name': 'wysiwyg'}}, {'attr': {'rows': '5' }}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Prérequis:</label>
+                        <div class="col-md-10">
+                            {{ form_widget(form.prerequisites, {'attr': {'class': 'form-control wysiwyg'}} ,{'attr': {'name': 'wysiwyg'}}, {'attr': {'rows': '5' }}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Durée:</label>
+                        <div class="col-md-10 input-width-large">
+
+                            {{ form_widget(form.duration, {'attr': {'class': 'form-control'}} ,{'attr': {'name': 'spinner-overflow'}}, {'attr': {'id': 'spinner-overflow' }}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Date:</label>
+                        <div class="col-md-10">
+                            {{ form_widget(form.date, {'attr': {'class': 'form-control'}} ,{'attr': {'data-mask': '9999/99/99'}}) }}
+                            <span class="help-block">2017/01/23</span></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Code:</label>
+                        <div class="col-md-10 input-width-large">
+
+                            {{ form_widget(form.code, {'attr': {'class': 'form-control'}} ,{'attr': {'name': 'spinner-overflow'}}, {'attr': {'id': 'spinner-overflow' }}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Domaine de formation:</label>
+                        <div class="col-md-4">
+
+                            {{ form_widget(form.idCategorie) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Photo:</label>
+                        <div class="col-md-10">
+
+                            {{ form_widget(form.brochure, {'attr': {'type': 'file' }}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Tags:</label>
+                        <div class="col-md-4">
+
+                            <ul class="tags" data-prototype="{{ form_widget(form.tags.vars.prototype)|e('html_attr') }}">
+                                {# iterate over each existing tag and render its only field: name #}
+                                {% for tag in form.tags %}
+                                    <li>{{ form_row(tag.name, {'attr': {'class': 'form-control'}} ,{'attr': {'name': 'regular'}}) }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label"></label>
+                        <div class="col-md-10">
+
+                            <input class="btn btn-primary" type="submit" value="Créer" />
+                        </div>
+                    </div>
+
+                </div>
+
+            {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+{% endblock %}

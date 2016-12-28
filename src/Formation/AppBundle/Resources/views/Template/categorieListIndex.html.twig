@@ -1,0 +1,14 @@
+{% block categorieListIndex %}
+
+    {% for categorie in categories %}
+        <div class="swiper-slide active" data-val="0">
+            <a class="tt-category custom-hover" href="{{ path('course_categorie', { 'id': categorie.id }) }}">
+                <span class="tt-category-overlay"></span>
+                <img class="img-responsive" src="{{ asset('/uploads/images/' ~ categorie.image) }}" height="122" width="170" alt="">
+                <span>{{ categorie.name }}</span>
+            </a>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

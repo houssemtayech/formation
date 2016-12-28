@@ -1,0 +1,43 @@
+{% extends "FormationAppBundle::adminLayout.html.twig" %}
+
+
+{% block content1 %}
+
+    <div class="widget box">
+
+
+        <div class="widget-content">
+
+
+
+
+
+
+
+            <div class="form-group col-xs-12">
+                <div class="col-md-2">
+                    {{ categorie.name }}
+                </div>
+                <div class="col-md-6 " >
+                    <img src="{{ asset('/uploads/images/' ~ categorie.image) }}" >
+
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary">Confirmer</button>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+{% endblock %}

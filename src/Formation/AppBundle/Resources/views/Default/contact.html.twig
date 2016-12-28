@@ -1,0 +1,110 @@
+{% extends "FormationAppBundle::layout.html.twig" %}
+
+
+{% block content %}
+
+
+<!-- TT-TOPHEADING -->
+<div class="tt-topheading background-block" style="background-image:url({{ asset('bundles/formationapp/img/heading/heading.jpg')}});">
+    <div class="container">
+        <h2 class="tt-topheading-title c-h3"><span>Contactez-nous</span></h2>
+        <ul class="tt-breadcrumbs">
+
+        </ul>
+    </div>
+</div>
+<div class="empty-space marg-lg-b85 marg-sm-b50 marg-xs-b30"></div>
+
+<div class="container">
+
+    <!-- TT-HEDING -->
+    <div class="tt-heding type-2">
+        <h4 class="tt-heding-title c-h4 txt-uppercase"><span>Service client – contactez-nous</span></h4>
+        <div class="tt-heding-desc">Vous souhaitez vous inscrire à une formation ? </div>
+    </div>
+    <div class="empty-space marg-lg-b25"></div>
+
+    <div class="simple-text size-4">
+        <p>Télécharger notre bulletin d’inscription libre</p>
+    </div>
+    <div class="empty-space marg-lg-b50 marg-sm-b30"></div>
+    <div class="tt-heding type-2">
+
+        <div class="tt-heding-desc">Vous souhaitez une information complémentaire ? Contactez notre service client</div>
+    </div>
+    <div class="empty-space marg-lg-b25"></div>
+    <!-- TT-CONTACT -->
+    <div class="tt-contact-wrapper">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="tt-contact clearfix">
+                    <div class="tt-contact-img"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="tt-contact-info">
+                        <b>CEGIX FORMATION</b></br>
+                        1, place Charles de Gaulle</br>
+                        Immeuble Central Gare </br>
+                        78180 Montigny le Bretonneux
+                    </div>
+                </div>
+                <div class="empty-space marg-xs-b30"></div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="tt-contact clearfix">
+                    <div class="tt-contact-img"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                    <div class="tt-contact-info">
+                        <a href="mailto:info@cegixformation.fr">info@cegixformation.fr</a>
+
+                    </div>
+                </div>
+                <div class="empty-space marg-xs-b30"></div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="tt-contact clearfix">
+                    <div class="tt-contact-img"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="tt-contact-info">
+                        <a href="tel:0601185012">Tél : 06 01 18 50 12</a><br>
+                        <a href="#">Fax : 08 90 20 75 21</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="empty-space marg-lg-b50 marg-sm-b30"></div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="tt-contact-form">
+                {{ form_start(form, {'attr': {'name': 'contactform'}}, {'attr': {'id': 'contact-form'}}) }}
+
+                    {{ form_widget(form.name, {'attr': {'class': 'c-input type-3'}}, {'attr': {'name': 'name'}}) }}
+
+                    {{ form_widget(form.email, {'attr': {'class': 'c-input type-3'}}, {'attr': {'name': 'email'}}) }}
+
+                    {{ form_widget(form.subject, {'attr': {'class': 'c-input type-3'}}, {'attr': {'name': 'subject'}}) }}
+
+                    {{ form_widget(form.message, {'attr': {'class': 'c-area type-1'}}, {'attr': {'name': 'message'}}) }}
+
+                    <div class="c-btn type-1 color-3">
+                        <input type="submit" value="Envoyer">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </div>
+                    {{ form_end(form) }}
+            </div>
+            <div class="simple-text tt-request-success">
+                <p></p>
+            </div>
+            <div class="empty-space marg-xs-b30"></div>
+        </div>
+        <div class="col-sm-6">
+            <div class="tt-contact-map map-block" id="map-canvas"  data-lat="48.7864871" data-lng="2.0428295" data-zoom="10"></div>
+            <div class="addresses-block">
+                <a data-lat="48.7864871" data-lng="2.0428295" data-string="1, place Charle de Gaulle. Immeuble Central Gare 78180 Montigny le Bretonneux"></a>
+            </div>
+        </div>
+    </div>
+    <div class="empty-space marg-lg-b135 marg-md-b120 marg-sm-b100 marg-xs-b60"></div>
+</div>
+
+{% endblock %}

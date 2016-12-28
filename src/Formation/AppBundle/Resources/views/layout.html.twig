@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+
+    {% block css %}
+
+    {% endblock %}
+    <!-- FONTS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"  rel="stylesheet">
+    <link href="{{ asset('bundles/formationapp/css/stroke-gap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/formationapp/css/flaticon.css') }}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic' rel='stylesheet' type='text/css'>
+
+    <!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" rel="stylesheet">
+    <link href="{{ asset('bundles/formationapp/css/idangerous.swiper.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/formationapp/css/style.css') }}" rel="stylesheet" type="text/css" />
+
+    <link rel="shortcut icon" href="{{ asset('bundles/formationapp/img/favicon.ico') }}" />
+    <title>Cegix Formation</title>
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="tt-header">
+        <div class="container">
+        
+        {{ include('FormationAppBundle:Template:header.html.twig') }}
+        </div>       
+    </header>
+    <div class="tt-search-popup">
+        <div class="tt-search-popup-vertical">
+          <div class="container">
+             <div class="row">
+                <div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
+                   <form>
+                        <h3 class="tt-search-popup-title">Search</h3>
+                        <div class="tt-search-popup-field">
+                            <input type="text" placeholder="Enter keyword" class="input" required>
+                            <div class="tt-search-popup-devider"></div>
+                            <div class="tt-search-popup-submit">
+                                <i class="fa fa-search"></i>
+                                <input type="submit" value="">
+                            </div>    
+                        </div>
+                        <a href="#" class="close"><span>+</span></a>
+                   </form> 
+                </div> 
+             </div>
+          </div>
+        </div>
+    </div>    
+    <div class="tt-header-margin"></div>
+
+    <div id="content-wrapper">
+
+
+        <!-- TT-MSLIDE -->
+        
+
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+
+
+    <!-- FOOTER -->
+    {% include 'FormationAppBundle:Template:footer.html.twig' %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="{{ asset('bundles/formationapp/js/idangerous.swiper.min.js') }}"></script>
+    <script src="{{ asset('bundles/formationapp/js/jquery.countTo.js') }}"></script>
+    <script src="{{ asset('bundles/formationapp/js/jquery.viewportchecker.min.js') }}"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=en"></script>
+    <script src="{{ asset('bundles/formationapp/js/map.js') }}"></script>
+    <script src="{{ asset('bundles/formationapp/js/global.js') }}"></script>
+    <script src="{{ asset('bundles/formationapp/js/typeahead/bloodhound.js') }}"></script>
+    <script src="{{ asset('bundles/formationapp/js/typeahead/typeahead.bundle.js') }}"></script>
+    <script src="{{ asset('bundles/formationapp/js/typeahead/typeahead.jquery.js') }}"></script>
+    {% block javascript %}
+
+    {% endblock %}
+    <script >
+        function submitForm() {
+            $.ajax({type:'POST', url:'email-action.php', data:$('#contact-form').serialize(), success: function(response) {
+                $('.tt-request-success').html('Your message was sent successfully');
+                document.contactform.reset();
+            }});
+            return false;
+        }
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="formation_app_homepage" path="/">
+        <default key="_controller">FormationAppBundle:Default:index</default>
+    </route>
+    <route id="formation_app_error" path="/erreur">
+        <default key="_controller">FormationAppBundle:Error:index</default>
+    </route>
+
+    <route id="admin_app_homepage" path="/admin">
+        <default key="_controller">FormationAppBundle:Default:admin</default>
+    </route>
+
+    <route id="formation_app_demandeur_emploi" path="/demandeur-d-emploi">
+        <default key="_controller">FormationAppBundle:Default:demandeurEmploi</default>
+    </route>
+    <route id="formation_app_deroulement_formation" path="/deroulement-d-une-formation">
+        <default key="_controller">FormationAppBundle:Default:deroulementFormation</default>
+    </route>
+    <route id="formation_app_formation_intra" path="/formation-intra">
+        <default key="_controller">FormationAppBundle:Default:formationIntra</default>
+    </route>
+    <route id="formation_app_formation_mesure" path="/formation-sur-mesure">
+        <default key="_controller">FormationAppBundle:Default:formationMesure</default>
+    </route>
+    <route id="formation_app_grandeEntreprise" path="/grande-entreprise">
+        <default key="_controller">FormationAppBundle:Default:grandeEntreprise</default>
+    </route>
+    <route id="formation_app_pme" path="/pme">
+        <default key="_controller">FormationAppBundle:Default:pme</default>
+    </route>
+    <route id="formation_app_elearning" path="/e-learning">
+        <default key="_controller">FormationAppBundle:Default:eLearning</default>
+    </route>
+    <route id="formation_app_pro" path="/contrat-pro">
+        <default key="_controller">FormationAppBundle:Default:contactPro</default>
+    </route>
+
+</routes>

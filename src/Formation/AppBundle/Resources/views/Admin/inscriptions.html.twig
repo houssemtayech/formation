@@ -1,0 +1,49 @@
+{% extends "FormationAppBundle::adminLayout.html.twig" %}
+
+
+{% block content1 %}
+
+
+    <div class="widget box">
+        <div class="widget-header">
+            <h4><i class="icon-reorder"></i> Liste des inscriptions </h4>
+            <div class="toolbar no-padding">
+                <div class="btn-group">
+                    <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="widget-content no-padding">
+            <table class="table table-striped table-bordered table-hover table-checkable table-responsive datatable">
+                <thead>
+                <tr>
+
+                    <th data-class="expand">Référence </th>
+                    <th>Titre de la formation</th>
+                    <th>Consulter</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for inscription in inscriptions %}
+                    <tr>
+                        <td>{{ inscription.codeFormation }}</td>
+                        <td>{{ inscription.titleFormation }}</td>
+
+                        <td class="align-center">
+                        <span class="btn-group">
+
+							<a href="{{ path('inscription_show', { 'id': inscription.id }) }}" class="bs-tooltip" title="Consulter" class="btn btn-xs"><i class="icon-search"></i></a>
+
+						</span>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}

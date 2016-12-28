@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Subscriber</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ subscriber.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ subscriber.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('subscriber_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('subscriber_edit', { 'id': subscriber.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

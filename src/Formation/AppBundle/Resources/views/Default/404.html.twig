@@ -1,0 +1,39 @@
+{% extends "FormationAppBundle::layout.html.twig" %}
+
+
+{% block content %}
+
+    <div class="tt-topheading background-block" >
+        <div class="container">
+            <h2 class="tt-topheading-title c-h3"><span>404 Error Page</span></h2>
+            <ul class="tt-breadcrumbs">
+
+            </ul>
+        </div>
+    </div>
+    <div class="empty-space marg-lg-b70 marg-sm-b50 marg-xs-b30"></div>
+
+    <div class="container">
+
+        <!-- TT-EVENTS -->
+        <div class="row">
+            <div class="col-sm-5">
+                <img class="tt-notfound-img img-responsive" src="{{ asset('bundles/formationapp/img/404/notfound.jpg') }}" height="455" width="508" alt="">
+            </div>
+            <div class="col-sm-7">
+                <div class="empty-space marg-lg-b100 marg-md-b50 marg-sm-b40 marg-xs-b30"></div>
+                <div class="tt-notfound-info">
+                    <h1 class="tt-notfound-title c-h1"><span>404:</span> PAGE NON DISPONIBLE</h1>
+                    <div class="simple-text size-6 color-4">
+                        <p><i>Nous sommes désolés mais nous ne pouvons pas trouver la page demandée. Cela peut être dû au fait que vous avez tapé l'adresse Web de manière incorrecte.</i></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="empty-space marg-lg-b95 marg-md-b120 marg-sm-b100 marg-xs-b60"></div>
+    </div>
+
+{% endblock %}

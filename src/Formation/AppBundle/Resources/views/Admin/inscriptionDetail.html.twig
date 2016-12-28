@@ -1,0 +1,282 @@
+{% extends "FormationAppBundle::adminLayout.html.twig" %}
+
+
+{% block content1 %}
+
+    <div class="widget box">
+        <div class="widget-header">
+            <h4><i class="icon-reorder"></i> Détails </h4>
+            <div class="toolbar no-padding">
+                <div class="btn-group">
+                    <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget-content">
+            <form class="form-horizontal row-border" action="#">
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Intitulé de la formation* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.titleFormation }}
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Code de la formation :</label>
+                    <div class="col-md-6">
+                        {{ inscription.codeFormation }}
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Tarif :</label>
+                    <div class="col-md-3">
+                        {{ inscription.price }}
+
+                    </div> <b>€</b>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Date  :</label>
+                    <div class="col-md-6">
+
+                        {% if inscription.date %}{{ inscription.date|date('Y-m-d') }}{% endif %}
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Code Promotion  :</label>
+                    <div class="col-md-6">
+                        {{ inscription.codePromo }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Commentaire :</label>
+                    <div class="col-md-6">
+                        {{ inscription.comment }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Votre inscription fait suite :</label>
+                    <div class="col-md-6">
+                        {{ inscription.inscriptionSource }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label" style="color: #90111A"><b style="font-size: 24px">Participant</b></label>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Civilité*  :</label>
+                    <div class="col-md-6">
+                        {{ inscription.civility }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Nom* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.firstName }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Prénom* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.lastName }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Fonction* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.fonction }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Email* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.email }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Téléphone* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.phone }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label">Responsable hiérarchique</label>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Nom* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.responsibleFirstName }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Prénom* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.responsibleLastName }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Email* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.responsibleEmail }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-10 control-label" style="color: #90111A"><b style="font-size: 24px">Personne responsable de l'inscription</b></label>
+                    <div class="col-md-2">
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Civilité* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.iResponsibleCivility }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Nom* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.iResponsibleFirstName }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Prénom* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.iResponsibleLastName }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Fonction* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.iResponsibleFonction }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Téléphone* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.iResposiblePhone }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Email* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.iResponsibleEmail }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label" style="color: #90111A"><b style="font-size: 24px">Société</b></label>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Société* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.company }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Service :</label>
+                    <div class="col-md-6">
+                        {{ inscription.companyService }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Adresse* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.companyAddress }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Boite postale :</label>
+                    <div class="col-md-6">
+                        {{ inscription.companyPostBox }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Complément voie :</label>
+                    <div class="col-md-6">
+                        {{ inscription.companySupplimentTrack }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Code postal* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.companyPostalCode }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Ville* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.city }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Pays :</label>
+                    <div class="col-md-6">
+                        {{ inscription.country }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Code APE/NAF :</label>
+                    <div class="col-md-6">
+                        {{ inscription.codeA }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Numéro SIRET* :</label>
+                    <div class="col-md-6">
+                        {{ inscription.numberSiret }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-6 control-label" style="color: #90111A"><b style="font-size: 24px">Financement</b></label>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Bon de commande :</label>
+                    <div class="col-md-6">
+                        {% if inscription.purchaseOrder %}Yes{% else %}No{% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Si oui, numéro :</label>
+                    <div class="col-md-6">
+                        {{ inscription.ifYesNumber }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Adresse de facturation :</label>
+                    <div class="col-md-6">
+                        {{ inscription.billingAddress }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-6">
+                        <input class="btn btn-primary" type="submit" value="ENVOYER" />
+                    </div>
+                </div>
+            </form>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+{% endblock %}

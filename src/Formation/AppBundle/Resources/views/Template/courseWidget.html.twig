@@ -1,0 +1,23 @@
+
+
+{% block widgetCourses %}
+
+    <ul class="tt-scours-wrapper">
+
+        {% for course in cour|slice(0, 4) %}
+            <li>
+                <div class="tt-scours clearfix">
+                    <a class="tt-scours-img custom-hover" href="{{ path('course_show', { 'id': course.id }) }}">
+                        <img class="img-responsive" src="{{ asset('/uploads/images/' ~ course.brochure) }}" height="75" width="75" alt="">
+                    </a>
+                    <div class="tt-scours-info">
+                        <a class="tt-scours-title" href="{{ path('course_show', { 'id': course.id }) }}">{{ course.title }}</a>
+                        <div class="tt-scours-price">{{ course.price }} € </div>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="empty-space marg-lg-b40 marg-sm-b60"></div>
+
+{% endblock %}

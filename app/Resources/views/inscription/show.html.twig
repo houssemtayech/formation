@@ -1,0 +1,168 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Inscription</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ inscription.id }}</td>
+            </tr>
+            <tr>
+                <th>Titleformation</th>
+                <td>{{ inscription.titleFormation }}</td>
+            </tr>
+            <tr>
+                <th>Codeformation</th>
+                <td>{{ inscription.codeFormation }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ inscription.price }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if inscription.date %}{{ inscription.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Codepromo</th>
+                <td>{{ inscription.codePromo }}</td>
+            </tr>
+            <tr>
+                <th>Comment</th>
+                <td>{{ inscription.comment }}</td>
+            </tr>
+            <tr>
+                <th>Inscriptionsource</th>
+                <td>{{ inscription.inscriptionSource }}</td>
+            </tr>
+            <tr>
+                <th>Civility</th>
+                <td>{{ inscription.civility }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ inscription.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ inscription.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Fonction</th>
+                <td>{{ inscription.fonction }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ inscription.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ inscription.phone }}</td>
+            </tr>
+            <tr>
+                <th>Responsiblefirstname</th>
+                <td>{{ inscription.responsibleFirstName }}</td>
+            </tr>
+            <tr>
+                <th>Responsiblelastname</th>
+                <td>{{ inscription.responsibleLastName }}</td>
+            </tr>
+            <tr>
+                <th>Responsibleemail</th>
+                <td>{{ inscription.responsibleEmail }}</td>
+            </tr>
+            <tr>
+                <th>Iresponsiblecivility</th>
+                <td>{{ inscription.iResponsibleCivility }}</td>
+            </tr>
+            <tr>
+                <th>Iresponsiblefirstname</th>
+                <td>{{ inscription.iResponsibleFirstName }}</td>
+            </tr>
+            <tr>
+                <th>Iresponsiblelastname</th>
+                <td>{{ inscription.iResponsibleLastName }}</td>
+            </tr>
+            <tr>
+                <th>Iresponsiblefonction</th>
+                <td>{{ inscription.iResponsibleFonction }}</td>
+            </tr>
+            <tr>
+                <th>Iresposiblephone</th>
+                <td>{{ inscription.iResposiblePhone }}</td>
+            </tr>
+            <tr>
+                <th>Iresponsibleemail</th>
+                <td>{{ inscription.iResponsibleEmail }}</td>
+            </tr>
+            <tr>
+                <th>Company</th>
+                <td>{{ inscription.company }}</td>
+            </tr>
+            <tr>
+                <th>Companyservice</th>
+                <td>{{ inscription.companyService }}</td>
+            </tr>
+            <tr>
+                <th>Companyaddress</th>
+                <td>{{ inscription.companyAddress }}</td>
+            </tr>
+            <tr>
+                <th>Companypostalcode</th>
+                <td>{{ inscription.companyPostalCode }}</td>
+            </tr>
+            <tr>
+                <th>Companysupplimenttrack</th>
+                <td>{{ inscription.companySupplimentTrack }}</td>
+            </tr>
+            <tr>
+                <th>Companypostbox</th>
+                <td>{{ inscription.companyPostBox }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ inscription.city }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ inscription.country }}</td>
+            </tr>
+            <tr>
+                <th>Codea</th>
+                <td>{{ inscription.codeA }}</td>
+            </tr>
+            <tr>
+                <th>Numbersiret</th>
+                <td>{{ inscription.numberSiret }}</td>
+            </tr>
+            <tr>
+                <th>Purchaseorder</th>
+                <td>{% if inscription.purchaseOrder %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ifyesnumber</th>
+                <td>{{ inscription.ifYesNumber }}</td>
+            </tr>
+            <tr>
+                <th>Billingaddress</th>
+                <td>{{ inscription.billingAddress }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('inscription_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('inscription_edit', { 'id': inscription.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

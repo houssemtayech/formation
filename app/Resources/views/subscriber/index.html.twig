@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Subscribers list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for subscriber in subscribers %}
+            <tr>
+                <td><a href="{{ path('subscriber_show', { 'id': subscriber.id }) }}">{{ subscriber.id }}</a></td>
+                <td>{{ subscriber.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('subscriber_show', { 'id': subscriber.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('subscriber_edit', { 'id': subscriber.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('subscriber_new') }}">Create a new subscriber</a>
+        </li>
+    </ul>
+{% endblock %}

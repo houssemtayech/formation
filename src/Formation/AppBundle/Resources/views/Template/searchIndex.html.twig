@@ -1,0 +1,79 @@
+<style>
+        .typeahead{
+                width: 100%;
+                height: 64px;
+                font-size: 16px;
+                font-weight: 400;
+                font-style: italic;
+                color: #9a9a9a;
+                border-radius: 3px;
+                border: 2px solid #fff;
+                padding-left: 30px;
+                padding-right: 150px;
+        }
+</style>
+<div class="tt-mslide-search">
+{{ form_start(form, {'action': path('course_title')}) }}
+
+                {{ form_widget(form.title, {'attr': {'class': 'typeahead'}}) }}
+
+
+        <div class="tt-mslide-submit c-btn type-1 size-6 color-2">
+                <input type="submit" value="Chercher" />
+        </div>
+{{ form_end(form) }}
+</div>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+<script src="{{ asset('bundles/formationapp/js/typeahead/bloodhound.js') }}"></script>
+<script src="{{ asset('bundles/formationapp/js/typeahead/typeahead.bundle.js') }}"></script>
+<script src="{{ asset('bundles/formationapp/js/typeahead/typeahead.jquery.js') }}"></script>
+
+
+{% block javascript %}
+
+
+
+<script  type="text/javascript">
+        var substringMatcher = function(strs) {
+                return function findMatches(q, cb) {
+                        var matches, substringRegex;
+
+                        // an array that will be populated with substring matches
+                        matches = [];
+
+                        // regex used to determine if a string contains the substring `q`
+                        substrRegex = new RegExp(q, 'i');
+
+                        // iterate through the pool of strings and for any string that
+                        // contains the substring `q`, add it to the `matches` array
+                        $.each(strs, function(i, str) {
+                                if (substrRegex.test(str)) {
+                                        matches.push(str);
+                                }
+                        });
+
+                        cb(matches);
+                };
+        };
+
+        var states = {{ varArray|json_encode|raw }};
+
+
+
+        $('div.tt-mslide-search .typeahead').typeahead({
+                        hint: true,
+                        highlight: true,
+                        minLength: 1
+                },
+                {
+                        name: 'states',
+                        source: substringMatcher(states)
+                });
+</script>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "FormationAppBundle::layout.html.twig" %}
+
+
+{% block content %}
+
+
+    <!-- TT-TOPHEADING -->
+    <div class="tt-topheading background-block" style="background-image:url({{ asset('bundles/formationapp/img/heading/heading.jpg')}});">
+        <div class="container">
+            <h2 class="tt-topheading-title c-h3"><span>Demande de devis</span></h2>
+            <ul class="tt-breadcrumbs">
+
+            </ul>
+        </div>
+    </div>
+    <div class="empty-space marg-lg-b85 marg-sm-b50 marg-xs-b30"></div>
+
+    <div class="container">
+
+        <!-- TT-HEDING -->
+
+
+
+
+        <div class="row" style=" width: 50%; padding: 10px;">
+            <div class="col-sm-14">
+                <div class="tt-contact-form">
+                    {{ form_start(form, {'attr': {'name': 'contactform'}}, {'attr': {'id': 'contact-form'}}) }}
+                    {{ form_widget(form.civility, {'attr': {'class': 'c-input type-3'}}) }}
+
+                    {{ form_widget(form.firstName, {'attr': {'class': 'c-input type-3'}}, {'attr': {'name': 'name'}}) }}
+
+                    {{ form_widget(form.lastName, {'attr': {'class': 'c-input type-3'}}, {'attr': {'name': 'email'}}) }}
+
+                    {{ form_widget(form.function, {'attr': {'class': 'c-input type-3'}}, {'attr': {'name': 'subject'}}) }}
+
+                    {{ form_widget(form.company, {'attr': {'class': 'c-input type-3'}}, {'attr': {'name': 'subject'}}) }}
+
+                    {{ form_widget(form.phone, {'attr': {'class': 'c-input type-3'}}, {'attr': {'name': 'subject'}}) }}
+
+                    {{ form_widget(form.email, {'attr': {'class': 'c-input type-3'}}, {'attr': {'name': 'subject'}}) }}
+
+                    <p><b>Objet de votre demande* :</b></p>
+
+                    {{ form_widget(form.object, {'attr': {'class': 'c-input type-3'}}) }}
+
+
+                    {{ form_widget(form.message, {'attr': {'class': 'c-area type-1'}}, {'attr': {'name': 'message'}}) }}
+
+                    <div class="c-btn type-1 color-3">
+                        <input type="submit" value="Envoyer">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+                <div class="simple-text tt-request-success">
+                    <p></p>
+                </div>
+                <div class="empty-space marg-xs-b30"></div>
+            </div>
+
+        </div>
+        <div class="empty-space marg-lg-b135 marg-md-b120 marg-sm-b100 marg-xs-b60"></div>
+    </div>
+
+{% endblock %}

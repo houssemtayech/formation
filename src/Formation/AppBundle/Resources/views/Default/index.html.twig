@@ -1,0 +1,69 @@
+{% extends "FormationAppBundle::layout.html.twig" %}
+
+
+{% block content %}
+<div class="tt-mslide color-2 size-4  tt-overlay color-5" style="background-image:url({{ asset('bundles/formationapp/img/mslide/mslide_9.jpg') }});">
+            <div class="container-fluid">
+                <div class="tt-mslide-table">
+                    <div class="tt-mslide-cell text-center">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h1 class="tt-mslide-title c-h1 txt-uppercase"><span>Evoluez</span> grâce à nos formations</h1>
+                                <div class="simple-text size-2 color-2">
+                                    <p><i>Des formations sur-mesure pour gagner en compétences</i></p>
+                                </div>
+
+
+                                   {# {% render (controller("FormationAppBundle:Course:typeahead")) %} #}
+
+
+                                <div class="tt-mslide-group-wrapper">
+                                    <div class="tt-mslide-group"><i class="fa fa-graduation-cap" aria-hidden="true"></i> 96% de satisfaction.</div>
+                                    <div class="tt-mslide-group"><i class="fa fa-file-text-o" aria-hidden="true"></i> Plus de 200 formateurs répertoriés.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+                </div>
+            </div>
+        </div>
+
+<div class="bg-1">
+            <div class="container">
+                <div class="empty-space marg-lg-b95 marg-sm-b50 marg-xs-b30"></div>
+
+                <!-- TT-HEDING -->
+                <div class="tt-heding type-3">
+                    <h5 class="tt-heding-title c-h4 txt-uppercase"><span>Découvrez nos domaines de formations</span></h5>
+                </div>
+                <div class="empty-space marg-lg-b45 marg-sm-b30"></div>
+
+                <!-- TT-CATEGORY -->            
+                <div class="tt-swiper-separated tt-custom-arrow">
+                    <div class="swiper-container" data-autoplay="0" data-loop="0" data-speed="500" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-sm-slides="4" data-md-slides="5" data-lg-slides="6" data-add-slides="6">
+                        <div class="swiper-wrapper clearfix">
+                        <!-- ********************************************** -->
+                            {% render (controller("FormationAppBundle:Categorie:index")) %}
+
+                            {% block categorieListIndex %}
+                            {% endblock %}
+                            
+                            
+                        </div>
+                        <div class="pagination type-1 visible-xs-block"></div>
+                    </div>
+                    <div class="custom-arrow-left tt-arrow-left type-1 color-2 pos-3 hidden-xs"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></div>
+                    <div class="custom-arrow-right tt-arrow-right type-1 color-2 pos-3 hidden-xs"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>              
+                </div>
+
+                <div class="empty-space marg-lg-b100 marg-sm-b50 marg-xs-b30"></div>   
+            </div>
+        </div>
+    {% render (controller("FormationAppBundle:Course:courseIndex")) %}
+
+    {% block indexCourses %}
+    {% endblock %}
+
+
+{% endblock %}
+

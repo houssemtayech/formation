@@ -1,0 +1,86 @@
+{% extends "FormationAppBundle::adminLayout.html.twig" %}
+
+
+{% block content1 %}
+
+    <div class="widget box">
+        <div class="widget-header">
+            <h4><i class="icon-reorder"></i> Détails </h4>
+            <div class="toolbar no-padding">
+                <div class="btn-group">
+                    <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget-content">
+            <form class="form-horizontal row-border" action="#">
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">Civilité : </label>
+                <div class="col-md-10">
+                    {{ devi.civility }}
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Nom :</label>
+                <div class="col-md-10">
+                    {{ devi.firstName }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">Prénom :</label>
+                <div class="col-md-10">
+                    {{ devi.lastName }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Fonction : </label>
+                <div class="col-md-10">
+                    {{ devi.function }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Société</label>
+                <div class="col-md-10">
+                    {{ devi.company }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Téléphone : </label>
+                <div class="col-md-10">
+                    {{ devi.phone }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Email :</label>
+                <div class="col-md-10">
+                    {{ devi.email }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Objet du demande : </label>
+                <div class="col-md-10">
+                    {{ devi.object }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Message : </label>
+                <div class="col-md-10">
+                    {{ devi.message }}
+                </div>
+            </div>
+            </form>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% block header %}
+
+<div class="top-inner">
+                <a class="logo" href="{{ path('formation_app_homepage') }}"><img src="{{ asset('bundles/formationapp/img/header/Untitled-4.jpg') }}" height="60" width="258" alt=""></a>
+            </div>
+            <button class="cmn-toggle-switch"><span></span></button>
+            <div class="toggle-block">
+                <nav class="main-nav clearfix">
+                    <ul>
+                        <li class="parent active">
+                            <a href="#">Nos Formations <i class="menu-toggle fa fa-angle-down"></i></a>
+                            <ul>
+
+                            {% render (controller("FormationAppBundle:Categorie:layout")) %}
+
+                                {% block categorieHeader %}
+                                {% endblock %}
+
+                            
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="#">Nos solutions<i class="menu-toggle fa fa-angle-down"></i></a>
+                            <ul>
+                                <li><a href="{{ path('formation_app_formation_intra') }}">Formation intra</a></li>
+                                <li><a href="{{ path('formation_app_deroulement_formation') }}">Déroulement d’une formation</a></li>
+                                <li><a href="{{ path('formation_app_formation_mesure') }}">Formation sur mesure</a></li>
+                                <li><a href="{{ path('formation_app_grandeEntreprise') }}">Vous êtes une grande entreprise</a></li>
+                                <li><a href="{{ path('formation_app_pme') }}">Vous êtes une PME</a></li>
+                                <li><a href="{{ path('formation_app_demandeur_emploi') }}">Vous êtes un demandeur d’emploi</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="{{ path('formation_app_elearning') }}">E-learning</a></li>
+                        <li><a href="{{ path('formation_app_pro') }}">Contrat Pro</a></li>
+                        <li><a href="{{ path('devis_new') }}">Devis</a></li>
+                        <li><a href="{{ path('contact_new') }}">Contact</a></li>
+
+                        
+                    </ul>
+                </nav>
+                
+                <div class="top-line">
+                    <div class="container">
+                                            
+                        <div class="top-info">
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:0601185012">Service client 06 01 18 50 12</a> 
+                        </div>                        
+
+                        <div class="top-info">
+                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                            <a href="{{ path('devis_new') }}">S’inscrire à une formation</a>
+                            
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+
+
+
+{% endblock %}

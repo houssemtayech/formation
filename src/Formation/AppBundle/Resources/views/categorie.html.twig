@@ -1,0 +1,12 @@
+
+
+{% block categorieHeader %}
+
+    {% for categorie in categories %}
+        <li><a href="{{ path('course_categorie', { 'id': categorie.id }) }}">{{ categorie.name }}</a></li>
+
+    {% endfor %}
+
+{% endblock %}
+
+

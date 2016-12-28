@@ -1,0 +1,24 @@
+{% block subscribe %}
+
+
+    <div class="tt-banner-2-right">
+
+
+            <div class="row">
+                {{ form_start(formSubscriber) }}
+
+                <div class="col-sm-8">
+                {{ form_widget(formSubscriber.email, {'attr': {'class': 'c-input type-2'}}) }}
+                </div>
+                <div class="col-sm-4">
+                    <div class="c-btn type-1 color-3 full">
+                        <input type="submit" value="Je m'abonne"/>
+                    </div>
+                </div>
+
+                {{ form_end(formSubscriber) }}
+            </div>
+
+    </div>
+
+{% endblock %}

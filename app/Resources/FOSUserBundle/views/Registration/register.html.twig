@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Créer nouveau compte</title>
+
+    <!--=== CSS ===-->
+
+    <!-- Bootstrap -->
+    <link href="{{ asset('bundles/formationapp/admin/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <!-- Theme -->
+    <link href="{{ asset('bundles/formationapp/admin/assets/css/main.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/formationapp/admin/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/formationapp/admin/assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/formationapp/admin/assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
+
+    <!-- Login -->
+    <link href="{{ asset('bundles/formationapp/admin/assets/css/login.css') }}" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="{{ asset('bundles/formationapp/admin/assets/css/fontawesome/font-awesome.min.css') }}">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/fontawesome/font-awesome-ie7.min.css">
+    <![endif]-->
+
+    <!--[if IE 8]>
+    <link href="assets/css/ie8.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+    <!--=== JavaScript ===-->
+
+
+</head>
+
+<body class="login">
+<!-- Logo -->
+<div class="logo">
+
+    <strong>Cegix </strong>Formation
+</div>
+<!-- /Logo -->
+
+<!-- Login Box -->
+<div class="box">
+    <div class="content">
+        <!-- Login Formular -->
+        <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+
+            {{ form_widget(form) }}
+            <div>
+                <input type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+            </div>
+        </form>
+
+        <!-- /Login Formular -->
+
+
+    </div> <!-- /.content -->
+
+    <!-- Forgot Password Form -->
+
+    <!-- /Forgot Password Form -->
+</div>
+<!-- /Login Box -->
+
+
+
+<script type="text/javascript" src="{{ asset('bundles/formationapp/admin/assets/js/libs/jquery-1.10.2.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('bundles/formationapp/admin/bootstrap/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/formationapp/admin/assets/js/libs/lodash.compat.min.js') }}"></script>
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="{{ asset('bundles/formationapp/admin/aassets/js/libs/html5shiv.js') }}"></script>
+<![endif]-->
+
+<!-- Beautiful Checkboxes -->
+<script type="text/javascript" src="{{ asset('bundles/formationapp/admin/plugins/uniform/jquery.uniform.min.js') }}"></script>
+
+<!-- Form Validation -->
+<script type="text/javascript" src="{{ asset('bundles/formationapp/admin/plugins/validation/jquery.validate.min.js') }}"></script>
+
+<!-- Slim Progress Bars -->
+<script type="text/javascript" src="{{ asset('bundles/formationapp/admin/plugins/nprogress/nprogress.js') }}"></script>
+
+<!-- App -->
+
+<script>
+    $(document).ready(function(){
+        "use strict";
+
+        Login.init(); // Init login JavaScript
+    });
+</script>
+</body>
+</html>

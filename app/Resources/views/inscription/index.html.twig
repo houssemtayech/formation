@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Inscriptions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titleformation</th>
+                <th>Codeformation</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Codepromo</th>
+                <th>Comment</th>
+                <th>Inscriptionsource</th>
+                <th>Civility</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Fonction</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Responsiblefirstname</th>
+                <th>Responsiblelastname</th>
+                <th>Responsibleemail</th>
+                <th>Iresponsiblecivility</th>
+                <th>Iresponsiblefirstname</th>
+                <th>Iresponsiblelastname</th>
+                <th>Iresponsiblefonction</th>
+                <th>Iresposiblephone</th>
+                <th>Iresponsibleemail</th>
+                <th>Company</th>
+                <th>Companyservice</th>
+                <th>Companyaddress</th>
+                <th>Companypostalcode</th>
+                <th>Companysupplimenttrack</th>
+                <th>Companypostbox</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Codea</th>
+                <th>Numbersiret</th>
+                <th>Purchaseorder</th>
+                <th>Ifyesnumber</th>
+                <th>Billingaddress</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for inscription in inscriptions %}
+            <tr>
+                <td><a href="{{ path('inscription_show', { 'id': inscription.id }) }}">{{ inscription.id }}</a></td>
+                <td>{{ inscription.titleFormation }}</td>
+                <td>{{ inscription.codeFormation }}</td>
+                <td>{{ inscription.price }}</td>
+                <td>{% if inscription.date %}{{ inscription.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ inscription.codePromo }}</td>
+                <td>{{ inscription.comment }}</td>
+                <td>{{ inscription.inscriptionSource }}</td>
+                <td>{{ inscription.civility }}</td>
+                <td>{{ inscription.firstName }}</td>
+                <td>{{ inscription.lastName }}</td>
+                <td>{{ inscription.fonction }}</td>
+                <td>{{ inscription.email }}</td>
+                <td>{{ inscription.phone }}</td>
+                <td>{{ inscription.responsibleFirstName }}</td>
+                <td>{{ inscription.responsibleLastName }}</td>
+                <td>{{ inscription.responsibleEmail }}</td>
+                <td>{{ inscription.iResponsibleCivility }}</td>
+                <td>{{ inscription.iResponsibleFirstName }}</td>
+                <td>{{ inscription.iResponsibleLastName }}</td>
+                <td>{{ inscription.iResponsibleFonction }}</td>
+                <td>{{ inscription.iResposiblePhone }}</td>
+                <td>{{ inscription.iResponsibleEmail }}</td>
+                <td>{{ inscription.company }}</td>
+                <td>{{ inscription.companyService }}</td>
+                <td>{{ inscription.companyAddress }}</td>
+                <td>{{ inscription.companyPostalCode }}</td>
+                <td>{{ inscription.companySupplimentTrack }}</td>
+                <td>{{ inscription.companyPostBox }}</td>
+                <td>{{ inscription.city }}</td>
+                <td>{{ inscription.country }}</td>
+                <td>{{ inscription.codeA }}</td>
+                <td>{{ inscription.numberSiret }}</td>
+                <td>{% if inscription.purchaseOrder %}Yes{% else %}No{% endif %}</td>
+                <td>{{ inscription.ifYesNumber }}</td>
+                <td>{{ inscription.billingAddress }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('inscription_show', { 'id': inscription.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('inscription_edit', { 'id': inscription.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
